@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Friends</title>
+</head>
+<body>
+    <div>
+        You are logged in as {{ user.first_name }} {{ user.last_name }} (id = {{ user.id }})
+        <form method="get" action="/profile">
+        <input type="submit" value="Profile">
+    </form>
+    </div>
+    <br>
+    <br>
+    <div>
+        Your friends ({{ friends|length }} random people):
+    </div>
+    {% for friend in friends %}
+    <div>
+        {{ friend.first_name }} {{ friend.last_name }}
+    </div>
+    {% endfor %}
+</body>
+</html>
