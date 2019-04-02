@@ -1,0 +1,1 @@
+web: gunicorn authVK.wsgi --log-file -
