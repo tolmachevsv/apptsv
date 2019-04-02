@@ -15,33 +15,7 @@ redirect_uri = 'https://apptsv.herokuapp.com/auth'
 
 friends_count = 5
 fields = 'nickname, domain, sex, bdate, city, country, timezone'
-# Create your views here.
 
-#
-# def index(request):
-#     code = request.GET.get('code', None)
-#     if not code:
-#         template = loader.get_template('web/index.html')
-#         return HttpResponse(template.render({}, request))
-#
-#     token, user_id = get_access_token(code)
-#     if not token:
-#         return HttpResponseNotFound("Error while receiving token")
-#     session = vk.Session(access_token=token)
-#     api = vk.API(session, v=5)
-#
-#     user = api.users.get(user_ids=user_id)
-#     friends = api.friends.get(user_id=user_id, order='random', count=friends_count, fields=fields)
-#
-#     print(user)
-#     print(friends)
-#
-#     template = loader.get_template('web/friends.html')
-#
-#     return HttpResponse(template.render({
-#         'friends': friends['items'],
-#         'user': user[0]
-#     }, request))
 
 
 def index(request):
@@ -106,12 +80,6 @@ def vk_redirect(request):
     )
     return HttpResponseRedirect(url)
 
-def profile(request):
-    template = loader.get_template('web/profile.html')
-
-    return HttpResponse(template.render({
-
-    }, request))
 
 def get_access_token(code):
     url = "https://oauth.vk.com/access_token?client_id={}&client_secret={}&redirect_uri={}&code={}".format(
