@@ -11,7 +11,7 @@ user_id_cookie = 'vk_user_id'
 
 client_id = 6920486
 secure_key = 'eIKDzRe3DyZrZIZEfdpz'
-redirect_uri = 'http://apptsv.herokuapp.com/auth'
+redirect_uri = 'https://apptsv.herokuapp.com/auth'
 
 friends_count = 5
 fields = 'nickname, domain, sex, bdate, city, country, timezone'
